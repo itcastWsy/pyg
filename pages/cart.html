@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<title>购物车</title>
+<link rel="stylesheet" href="/lib/mui/css/mui.min.css">
+<!-- <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/cart.css">
+</head>
+
+<body id="pyg_body" >
+  <!-- 头部工具栏 -->
+  <header id="pyg_header_tool" class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">购物车</h1>
+    <button id="delete_btn" class="mui-btn mui-btn-blue  mui-pull-left     mui-btn-outlined ">删除</button>
+    <button id="edit_btn" class="mui-btn mui-btn-blue  mui-btn-outlined mui-pull-right">编辑</button>
+  </header>
+  <div class="pyg_view">
+    <!-- 配送地址 -->
+    <div class="cart_address">
+      <div class="cart_addr_title">配送地址</div>
+      <div class="cart_addr_content">
+        <div class="ca_icon">
+          <span class="fa fa-map-marker"></span>
+        </div>
+        <div class="ca_info">
+          <div class="ca_info_title">默认地址</div>
+          <div class="ca_info_content">中国台湾钓鱼岛</div>
+        </div>
+      </div>
+    </div>
+    <!-- 总价 -->
+    <div class="cart_price">
+      <div class="cart_price_title">总价</div>
+      <div class="cart_price_content">
+        <div class="cp_info">
+          总价: <span class="totol_price_wrap"> ￥<span class="totol_price">0000</span></span>
+
+        </div>
+        <a href="javascript:;" class=" cp_order_btn mui-text-right">生成订单</a>
+      </div>
+    </div>
+    <!-- 订单 -->
+    <div class="cart_order">
+      <div class="cart_order_title">订单</div>
+      <div class="cart_order_content">
+        <ul class="cart_list">
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 尾部导航 -->
+  <footer class="pyg_footer">
+     <a href="/">
+       <span class="fa fa-home"></span>
+       <div class="page_name">首页</div>
+     </a>
+     <a href="/pages/category.html">
+       <span class="fa fa-list-ul "></span>
+       <div class="page_name">分类</div>
+     </a>
+     <a href="/pages/cart.html">
+       <span class="fa fa-shopping-cart"></span>
+       <div class="page_name">购物车</div>
+     </a>
+     <a href="/pages/me.html">
+       <span class="fa fa-user-circle-o"></span>
+       <div class="page_name">我的</div>
+     </a>
+   </footer>
+</body>
+<!-- 模板引擎 -->
+<script type="text/html" id="mainTpl" >
+  <!-- 对对象遍历的时候 在模板里面 key-》属性名 value：属性值 -->
+  {{each data value key }}
+  <li data-obj='{{value}}'>
+    <!-- 复选框 -->
+    <div class="cart_chk_wrap">
+      <div class="mui-input-row mui-checkbox">
+        <input class="goods_chk"  type="checkbox" >
+      </div>
+    </div>
+    <!-- 图片 -->
+    <div class="cart_img_wrap">
+      <img src="{{value.goods_small_logo}}" alt=""
+        class="item_left">
+    </div>
+    <!-- 商品信息 -->
+    <div class="cart_info_wrap">
+      <!-- <div class="goods_name mui-ellipsis-2"> -->
+      <div class="goods_name ">
+        {{value.goods_name}}
+      </div>
+      <div class="goods_num_wrap">
+        <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{value.goods_number}}'>
+          <!-- "-"按钮，点击可减小当前数值 -->
+          <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+          <input class="mui-numbox-input" type="number" value="{{value.amount}}" />
+          <!-- "+"按钮，点击可增大当前数值 -->
+          <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+        </div>
+      </div>
+      <div class="goods_price">￥  {{value.goods_price}}</div>
+    </div>
+  </li>
+  {{/each}}
+</script>
+<!-- 模板引擎 -->
+
+
+ 
+  <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"> </script>
+   
+  <script src="/lib/zepto/zepto.js"> </script>
+   
+  <script src="/lib/arttemplate/template-web.js"> </script>
+   
+  <script src="/js/commonn.js"> </script>
+   
+  <script src="/js/cart.js"> </script>
+  
+</html>

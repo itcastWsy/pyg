@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<title>商品详情</title>
+<link rel="stylesheet" href="/lib/mui/css/mui.min.css">
+<!-- <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/goods_detail.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+  <header class="pyg_nav_header mui-bar mui-bar-nav">
+     <h1 class="mui-title">商品详情</h1>
+     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+   </header>
+
+  <div class="pyg_view">
+
+  </div>
+  <!-- 尾部工具栏 -->
+  <footer class="pyg_tool">
+    <a href="javascript:;">
+      <span class="fa fa-weixin"></span>
+      <div>客服</div>
+    </a>
+    <a href="javascript:;">
+      <span class="fa fa-phone"></span>
+      <div>客服</div>
+    </a>
+    <a href="javascript:;" class="mui-btn-warning" >立即购买</a>
+    <a id="add_btn" href="javascript:;" class="mui-btn-danger">加入购物车</a>
+  </footer>
+  <!-- 尾部导航 -->
+</body>
+<!-- 模板引擎 -->
+<script type="text/html" id="mainTpl">
+  <!-- 轮播图 -->
+    <div class="mui-slider pyg_slides">
+        <!-- 图片 -->
+        <div class="mui-slider-group mui-slider-loop">
+          <!--支持循环，需要重复图片节点-->
+          <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data.pics[data.pics.length-1].pics_mid_url}}" /></a></div>
+          {{each data.pics value index}}
+          <div class="mui-slider-item"><a href="#"><img src="{{value.pics_mid_url}}" /></a></div>
+          {{/each}}
+          <!--支持循环，需要重复图片节点-->
+          <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data.pics[0].pics_mid_url}}" /></a></div>
+        </div>
+        <!-- 索引器 -->
+        <div class="mui-slider-indicator">
+            {{each data.pics value index}}
+            {{if index==0}}
+          <div class="mui-indicator mui-active"></div>
+          {{/if}}
+            {{if index!=0}}
+          <div class="mui-indicator"></div>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+      <!-- 轮播图 -->
+      <!-- 商品的名称 -->
+      <div class="goods_name">{{data.goods_name}}</div>
+      <!-- 商品的名称 -->
+      <!-- 商品的价格 -->
+      <div class="goods_price">￥{{data.goods_price}}</div>
+      <!-- 商品的价格 -->
+
+      <!-- 运费 -->
+      <ul class="goods_post_charge">
+          <li>
+            <span>已选</span>
+            <span>白色</span>
+          </li>
+          <li>
+            <span>促销</span>
+            <span>是</span>
+          </li>
+          <li>
+            <span>送至</span>
+            <span>上海市</span>
+          </li>
+          <li>
+            <span>运费</span>
+            <span>免运费</span>
+          </li>
+        </ul>
+      <!-- 运费 -->
+      <!-- 选项卡 -->
+      <div class="goods_info">
+        <!-- 标题 -->
+        <div id="segmentedControl" class="mui-segmented-control">
+            <a class="mui-control-item mui-active" href="#item1">图文详情</a>
+            <a class="mui-control-item" href="#item2"> 规格参数 </a>
+     
+          </div>
+          <!-- 内容 -->
+          <div>
+              <div id="item1" class="mui-control-content mui-active">
+                {{@data.goods_introduce}}
+              </div>
+              <div id="item2" class="mui-control-content">
+                <ul>
+                 {{each data.attrs value index}}
+                 <li>
+                    <div class="attr_title">{{value.attr_name.split("-")[0]}}</div>
+                    <div class="attr_content">
+                      <span>{{value.attr_name.split("-")[1]}}</span>
+                      <span>{{value.attr_value}}</span>
+                    </div>
+                  </li>
+                 {{/each}}
+                
+                </ul>
+              </div>
+            </div>
+      </div>
+      <!-- 选项卡 -->
+</script>
+
+<!-- 模板引擎 -->
+
+ 
+  <script src="/lib/mui/js/mui.min.js"> </script>
+   
+  <script src="/lib/zepto/zepto.js"> </script>
+   
+  <script src="/lib/arttemplate/template-web.js"> </script>
+   
+  <script src="/js/commonn.js"> </script>
+   
+  <script src="/js/goods_detail.js"> </script>
+  
+
+</html>

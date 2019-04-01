@@ -1,0 +1,168 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%; }
+
+body {
+  padding-top: 45px;
+  padding-bottom: 50px; }
+
+img {
+  display: block;
+  width: 100%; }
+
+.pyg_view {
+  height: 100%;
+  overflow: scroll; }
+
+.pyg_search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background-color: #fff;
+  padding: 5px; }
+
+.pyg_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding-top: 3px; }
+  .pyg_footer a {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    color: #000;
+    text-align: center; }
+    .pyg_footer a .fa {
+      font-size: 20px; }
+    .pyg_footer a .page_name {
+      font-size: 13px; }
+
+.waiting {
+  /* 遮罩层 灰色 */
+  /* 图标 */ }
+  .waiting::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; }
+  .waiting::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-animation: fa-spin 2s infinite linear;
+            animation: fa-spin 2s infinite linear;
+    content: "\f110";
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    /* transform:  */
+    margin-left: -25px;
+    font-size: 50px;
+    z-index: 1001; }
+
+.pyg_view {
+  background-color: #fff; }
+
+.goods_name {
+  padding: 5px;
+  font-size: 14px; }
+
+.goods_price {
+  padding: 5px;
+  font-size: 20px;
+  color: orange; }
+
+.goods_post_charge {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 5px; }
+  .goods_post_charge li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 13px;
+    border-bottom: 1px solid #666;
+    padding: 5px 0; }
+    .goods_post_charge li span:nth-child(1) {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      color: #ccc; }
+    .goods_post_charge li span:nth-child(2) {
+      -webkit-box-flex: 5;
+          -ms-flex: 5;
+              flex: 5;
+      color: #666; }
+
+#item2 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 5px; }
+  #item2 ul li {
+    background-color: #efeff4;
+    color: #666; }
+    #item2 ul li .attr_title {
+      font-size: 16px;
+      padding: 5px;
+      border-bottom: 1px solid #000; }
+    #item2 ul li .attr_content {
+      padding: 5px;
+      font-size: 13px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      #item2 ul li .attr_content span:nth-child(1) {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
+      #item2 ul li .attr_content span:nth-child(2) {
+        -webkit-box-flex: 3;
+            -ms-flex: 3;
+                flex: 3; }
+
+.pyg_tool {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .pyg_tool a {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    font-size: 13px; }
+  .pyg_tool a:nth-child(-n+2) {
+    color: #666;
+    padding-top: 5px; }
+    .pyg_tool a:nth-child(-n+2) .fa {
+      font-size: 18px; }
+  .pyg_tool a:nth-last-child(-n+2) {
+    color: #fff;
+    line-height: 45px; }
+  .pyg_tool a:last-child {
+    border-right: none; }

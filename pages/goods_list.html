@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<title>商品列表</title>
+<link rel="stylesheet" href="/lib/mui/css/mui.min.css">
+<!-- <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/goods_list.css">
+</head>
+
+<body>
+  <div class="mui-off-canvas-wrap mui-draggable ">
+    <!-- 菜单容器 -->
+    <aside class="mui-off-canvas-right">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+        <div class="search_warp">
+          <div class="search_bar">
+            <div>
+              <input type="text" class="query_txt" >
+              <button class="query_btn">搜索</button>
+            </div>
+          </div>
+          <div class="search_list">
+             <button class="clear_key mui-btn mui-btn-danger" >清空</button>
+            <ul class="mui-clearfix"></ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </aside>
+    <!-- 主页面容器 -->
+    <div class="mui-inner-wrap">
+
+      <div class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <div class="pyg_main">
+            <header class= " pyg_swiper_bar mui-bar mui-bar-nav">
+                <a class="mui-icon fa fa-search mui-pull-right"></a>
+                <h1 class="mui-title">搜索</h1>
+              </header>
+            <div class="pyg_view">
+              <div >
+                <ul class="goods_wrap "></ul>   
+              </div>
+            </div>
+            <!-- 尾部导航 -->
+            <footer class="pyg_footer">
+     <a href="/">
+       <span class="fa fa-home"></span>
+       <div class="page_name">首页</div>
+     </a>
+     <a href="/pages/category.html">
+       <span class="fa fa-list-ul "></span>
+       <div class="page_name">分类</div>
+     </a>
+     <a href="/pages/cart.html">
+       <span class="fa fa-shopping-cart"></span>
+       <div class="page_name">购物车</div>
+     </a>
+     <a href="/pages/me.html">
+       <span class="fa fa-user-circle-o"></span>
+       <div class="page_name">我的</div>
+     </a>
+   </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<!-- 模板引擎 -->
+<script type="text/html" id="mainTpl">
+  {{each data value index}}
+  <li>
+      <a href="goods_detail.html?goods_id={{value.goods_id}}">
+        <!-- 左侧 -->
+        <div class="item_left">
+          <img src="{{value.goods_small_logo}}" alt="">
+        </div>
+        <!-- 右侧 -->
+        <div class="item_right">
+          <!-- 商品的名称 -->
+          <div class="goods_name mui-ellipsis">
+      {{value.goods_name}}
+          </div>
+          <!-- 价格 -->
+          <div class="goods_price">
+            ￥{{value.goods_price}}
+          </div>
+        </div>
+      </a>
+    </li>
+  {{/each}}
+</script>
+
+<!-- 模板引擎 -->
+ 
+  <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"> </script>
+   
+  <script src="/lib/zepto/zepto.js"> </script>
+   
+  <script src="/lib/arttemplate/template-web.js"> </script>
+   
+  <script src="/lib/iscroll/iscroll.js"> </script>
+   
+  <script src="https://unpkg.com/storejs/dist/store.min.js"> </script>
+   
+  <script src="/js/commonn.js"> </script>
+   
+  <script src="/js/goods_list.js"> </script>
+  
+
+</html>

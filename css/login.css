@@ -1,0 +1,85 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%; }
+
+body {
+  padding-top: 45px;
+  padding-bottom: 50px; }
+
+img {
+  display: block;
+  width: 100%; }
+
+.pyg_view {
+  height: 100%;
+  overflow: scroll; }
+
+.pyg_search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background-color: #fff;
+  padding: 5px; }
+
+.pyg_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  padding-top: 3px; }
+  .pyg_footer a {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    color: #000;
+    text-align: center; }
+    .pyg_footer a .fa {
+      font-size: 20px; }
+    .pyg_footer a .page_name {
+      font-size: 13px; }
+
+.waiting {
+  /* 遮罩层 灰色 */
+  /* 图标 */ }
+  .waiting::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; }
+  .waiting::after {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-animation: fa-spin 2s infinite linear;
+            animation: fa-spin 2s infinite linear;
+    content: "\f110";
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    /* transform:  */
+    margin-left: -25px;
+    font-size: 50px;
+    z-index: 1001; }
+
+.pyg_view {
+  padding: 10px; }
+
+.login_btn_tool a {
+  display: block;
+  margin-top: 20px; }

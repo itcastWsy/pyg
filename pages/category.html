@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<title>分类页面</title>
+<link rel="stylesheet" href="/lib/mui/css/mui.min.css">
+<!-- <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/category.css">
+
+</head>
+
+<body>
+  <!-- 头部搜索 -->
+  <header class="pyg_search">
+     <div class="mui-input-row mui-search">
+       <input type="search" class="mui-input-clear" placeholder="">
+     </div>
+   </header>
+  <div class="pyg_view">
+    <!-- 左侧 -->
+    <div class="left_menu">
+      <ul class="menus_wrap"></ul>
+    </div>
+    <!-- 右侧 -->
+    <div class="right_content">
+
+    </div>
+  </div>
+  <footer class="pyg_footer">
+     <a href="/">
+       <span class="fa fa-home"></span>
+       <div class="page_name">首页</div>
+     </a>
+     <a href="/pages/category.html">
+       <span class="fa fa-list-ul "></span>
+       <div class="page_name">分类</div>
+     </a>
+     <a href="/pages/cart.html">
+       <span class="fa fa-shopping-cart"></span>
+       <div class="page_name">购物车</div>
+     </a>
+     <a href="/pages/me.html">
+       <span class="fa fa-user-circle-o"></span>
+       <div class="page_name">我的</div>
+     </a>
+   </footer>
+</body>
+<!-- 模板引擎 -->
+<!-- 左侧的菜单 -->
+<script type="text/html" id="leftTpl">
+  {{each data value index}}
+  {{if index==0}}
+  <li class="active" >{{value.cat_name}}</li>
+  {{/if}}
+  {{if index!=0}}
+  <li >{{value.cat_name}}</li>
+  {{/if}}
+  {{/each}}
+ </script>
+<!-- 左侧的菜单 -->
+
+<!-- 右侧的内容 -->
+<script type="text/html" id="rightTpl">
+  <div>
+  {{each data value1 index1}}
+  <!-- 二级分类 -->
+  <div class="cate2">
+    <div class="cate2_title">{{value1.cat_name}}</div>
+    <div class="cate2_content">
+      <ul>
+        {{each value1.children value2 index2}}
+        <li>
+          <a href="goods_list.html?cid={{value2.cat_id}}">
+            <img src="{{$imports.imgurl}}{{value2.cat_icon}}" alt="">
+            <span>{{value2.cat_name}}</span>
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  {{/each}}
+</div>
+</script>
+<!-- 右侧的内容 -->
+
+<!-- 模板引擎 -->
+
+ 
+  <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"> </script>
+   
+  <script src="/lib/zepto/zepto.js"> </script>
+   
+  <script src="/lib/arttemplate/template-web.js"> </script>
+   
+  <script src="/lib/iscroll/iscroll.js"> </script>
+   
+  <script src="/js/commonn.js"> </script>
+   
+  <script src="/js/category.js"> </script>
+  
+</html>

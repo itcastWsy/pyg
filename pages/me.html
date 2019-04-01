@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<title>个人中心</title>
+<link rel="stylesheet" href="/lib/mui/css/mui.min.css">
+<!-- <link href="https://cdn.bootcss.com/mui/3.7.1/css/mui.min.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/me.css">
+</head>
+
+<body id="pyg_body" >
+  <!-- 头部工具栏 -->
+  <header id="pyg_nav_header" class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">个人中心</h1>
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+  </header>
+  <div class="pyg_view">
+    
+    <!-- 用户信息 -->
+    <div class="pyg_userinfo">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell mui-media">
+            <a href="javascript:;">
+              <span class="mui-icon mui-icon-contact mui-media-object mui-pull-left"></span>
+              <div class="mui-media-body">
+               <span class="username"></span>
+                <p class='mui-ellipsis '><span class="user_email"></span></p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 订单管理 -->
+      <div class="pgy_order">
+        <div class="order_title">订单管理</div>
+        <div class="order_tabs">
+          <a href="/pages/order.html?type=1">
+            <span class="fa fa-money"></span>
+            <div class="item_name">待付款</div>
+          </a>
+          <a href="/pages/order.html?type=1">
+            <span class="fa fa-envelope-open-o"></span>
+            <div class="item_name">待收货</div>
+          </a>
+          <a href="/pages/order.html?type=1">
+            <span class="fa fa-pie-chart "></span>
+            <div class="item_name">退款/售后</div>
+          </a>
+          <a href="/pages/order.html?type=1">
+            <span class="fa fa-shopping-bag "></span>
+            <div class="item_name">全部订单</div>
+          </a>
+        </div>
+      </div>
+      <!-- 密码 -->
+      <div class="pyg_pwd">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">修改登录密码</a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">支付密码管理</a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">收货地址管理</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 客服 -->
+      <div class="pyg_contack">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a class="">联系客服
+              <span class="mui-pull-right">4000-xxx-xxx-xxx</span>
+            </a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">意见反馈</a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">关于我们</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 退出登录 -->
+      <div class="login_out">
+        <button id="btn_login_out" type="button" class="mui-btn mui-btn-block mui-btn-danger">退出登录</button>
+      </div>
+    
+  </div>
+  <!-- 尾部导航 -->
+  <!-- 尾部导航 -->
+  <footer class="pyg_footer">
+     <a href="/">
+       <span class="fa fa-home"></span>
+       <div class="page_name">首页</div>
+     </a>
+     <a href="/pages/category.html">
+       <span class="fa fa-list-ul "></span>
+       <div class="page_name">分类</div>
+     </a>
+     <a href="/pages/cart.html">
+       <span class="fa fa-shopping-cart"></span>
+       <div class="page_name">购物车</div>
+     </a>
+     <a href="/pages/me.html">
+       <span class="fa fa-user-circle-o"></span>
+       <div class="page_name">我的</div>
+     </a>
+   </footer>
+</body>
+<!-- 模板引擎 -->
+
+<!-- 模板引擎 -->
+
+
+ 
+  <script src="https://cdn.bootcss.com/mui/3.7.1/js/mui.min.js"> </script>
+   
+  <script src="/lib/zepto/zepto.js"> </script>
+   
+  <script src="/lib/arttemplate/template-web.js"> </script>
+   
+  <script src="/js/commonn.js"> </script>
+   
+  <script src="/js/me.js"> </script>
+  
+</html>
